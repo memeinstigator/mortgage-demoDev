@@ -44,6 +44,8 @@ public class CreateProcesses
 			deploymentId = "com.redhat.bpms.examples:mortgage:1";
 		}
 
+		System.out.println("Loading processes into your JBoss BPM Suite Server. Check the server log to see the application log outputs.");
+
 		populateSamples( userId, password, applicationContext, deploymentId );
 
 		System.out.println("Successfully loaded processes into your JBoss BPM Suite Server. Check the server log to see the application log outputs.");
@@ -56,51 +58,67 @@ public class CreateProcesses
 		Map<String, Object> processVariables;
 		//qualify with very low interest rate, great credit, non-jumbo loan
 		processVariables = getProcessArgs( "Amy", "12301 Wilshire", 333224449, 100000, 500000, 100000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//qualify with very low interest rate, great credit, non-jumbo loan
 		processVariables = getProcessArgs( "Andy", "12302 Wilshire", 333224449, 100000, 500000, 100000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//qualify with low interest rate, good credit, non-jumbo loan
 		processVariables = getProcessArgs( "John", "12303 Wilshire", 333224446, 100000, 500000, 100000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//qualify with low interest rate, good credit, non-jumbo loan
 		processVariables = getProcessArgs( "Jane", "12304 Wilshire", 333224446, 100000, 500000, 100000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//qualify with lower interest rate, great credit, jumbo loan
 		processVariables = getProcessArgs( "Liz", "12305 Wilshire", 333224449, 200000, 1000000, 200000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//qualify with lower interest rate, great credit, jumbo loan
 		processVariables = getProcessArgs( "Larry", "12306 Wilshire", 333224449, 200000, 1000000, 200000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//qualify with a bit higher interest rate, good credit, jumbo loan
 		processVariables = getProcessArgs( "Max", "12307 Wilshire", 333224446, 200000, 1000000, 200000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//qualify with a bit higher interest rate, good credit, jumbo loan
 		processVariables = getProcessArgs( "Marry", "12308 Wilshire", 333224446, 200000, 1000000, 200000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//interest rate too high, fails to qualify, terrible credit, jumbo loan
 		processVariables = getProcessArgs( "Joe", "12309 Wilshire", 333224442, 200000, 1000000, 200000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//down payment too low, doesn't qualify, jumbo loan
 		processVariables = getProcessArgs( "Jill", "12310 Wilshire", 333224442, 200000, 1000000, 200000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//down payment too low, doesn't qualify, jumbo loan
 		processVariables = getProcessArgs( "Rachel", "12311 Wilshire", 333224446, 200000, 1000000, 100000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//down payment too low, doesn't qualify, jumbo loan
 		processVariables = getProcessArgs( "Raphael", "12312 Wilshire", 333224446, 200000, 1000000, 100000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//incorrect ssn
 		processVariables = getProcessArgs( "Jennifer", "12313 Wilshire", 33322444, 200000, 1000000, 100000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//incorrect ssn
 		processVariables = getProcessArgs( "Jason", "12314 Wilshire", 33322444, 200000, 1000000, 100000, 30 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//amortization not offered
 		processVariables = getProcessArgs( "Mike", "12315 Wilshire", 333224446, 200000, 1000000, 100000, 20 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 		//amortization not offered
 		processVariables = getProcessArgs( "Molly", "12316 Wilshire", 333224446, 200000, 1000000, 100000, 20 );
+		System.out.println(processVariables);
 		kieSession.startProcess( "com.redhat.bpms.examples.mortgage.MortgageApplication", processVariables );
 	}
 
